@@ -22,24 +22,28 @@
     self.view.backgroundColor = [UIColor purpleColor];
     UIButton *backToSB = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.view addSubview:backToSB];
-    backToSB.frame = CGRectMake(100, 100, 100, 50);
-    backToSB.backgroundColor = [UIColor redColor];
+    backToSB.frame = CGRectMake(CGRectGetWidth(self.view.bounds)/2-50, 200, 100, 50);
     [backToSB setTitle:@"let me back" forState:UIControlStateNormal];
     backToSB.adjustsImageWhenHighlighted = YES;
     [backToSB addTarget:self action:@selector(backToSBClick)forControlEvents:UIControlEventTouchUpInside];
-}
 
--(void)backToSBClick
-{
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *mainVC = [sb instantiateViewControllerWithIdentifier:@"mainSB"];
-    [self presentViewController:mainVC animated:YES completion:nil];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 100,CGRectGetWidth(self.view.bounds)-40, 30)];
+    [self.view addSubview:label];
+    label.textAlignment = NSTextAlignmentLeft;
+    label.backgroundColor = [UIColor whiteColor];
+    label.textColor = [UIColor blackColor];
+    label.text =_textString;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+-(void)backToSBClick
+{
+    [self dismissViewControllerAnimated:YES completion:nil];    //返回上个界面
+}
 /*
 #pragma mark - Navigation
 

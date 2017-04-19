@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface secendViewController : UIViewController
-
+@property (nonatomic,strong) NSString *textString;
 @end
+
+

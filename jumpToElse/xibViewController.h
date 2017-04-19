@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface xibViewController : UIViewController
-
+@property (nonatomic,strong) NSString *textString;
 @end
